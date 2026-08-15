@@ -142,7 +142,7 @@ responses:
     - text: "You can book directly in the app! Dashboard → Book Appointment → pick your preferred clinic and schedule. Need help choosing a clinic?"
 
   utter_cancel_appointment:
-    - text: "To cancel: go to **My Appointments** → select the appointment → tap Cancel. Note: cancellations must be made at least 1 hour before the scheduled time. Need help with anything else?"
+   - text: "To cancel, go to **My Appointments**, select the appointment, and tap **Cancel**. Note: cancellations must be made at least 1 hour before the scheduled time. Need help with anything else?"
 
   utter_reschedule_appointment:
     - text: "To reschedule, go to **My Appointments**, select your appointment, and choose a new date and time — subject to availability. Would you like me to check available slots?"
