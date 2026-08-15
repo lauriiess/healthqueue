@@ -2,28 +2,7 @@ version: "3.1"
 
 stories:
 
-# ── Basic flows ──────────────────────────────────────────────────────────────
-- story: greet and help
-  steps:
-    - intent: greet
-    - action: utter_greet
-
-- story: goodbye
-  steps:
-    - intent: goodbye
-    - action: utter_goodbye
-
-- story: bot challenge
-  steps:
-    - intent: bot_challenge
-    - action: utter_bot_challenge
-
 # ── Queue Enrollment Flow ────────────────────────────────────────────────────
-- story: queue enrollment - direct join
-  steps:
-    - intent: join_queue
-    - action: action_join_queue
-
 - story: queue enrollment - greet then join
   steps:
     - intent: greet
@@ -45,11 +24,6 @@ stories:
     - intent: estimated_wait_time
     - action: action_get_estimated_wait_time
 
-- story: cancel queue flow
-  steps:
-    - intent: cancel_queue
-    - action: action_cancel_queue
-
 - story: cancel queue with confirmation
   steps:
     - intent: cancel_queue
@@ -65,11 +39,6 @@ stories:
     - action: utter_queue_cancel_aborted
 
 # ── Queue Status Flow ─────────────────────────────────────────────────────────
-- story: check queue status - direct
-  steps:
-    - intent: check_queue_status
-    - action: action_check_queue_status
-
 - story: check queue then wait time
   steps:
     - intent: check_queue_status
@@ -77,17 +46,7 @@ stories:
     - intent: estimated_wait_time
     - action: action_get_estimated_wait_time
 
-- story: get queue number
-  steps:
-    - intent: get_queue_number
-    - action: utter_get_queue_number
-
 # ── Wait Time Flow ────────────────────────────────────────────────────────────
-- story: wait time direct
-  steps:
-    - intent: estimated_wait_time
-    - action: action_get_estimated_wait_time
-
 - story: wait time after greeting
   steps:
     - intent: greet
@@ -96,11 +55,6 @@ stories:
     - action: action_get_estimated_wait_time
 
 # ── Clinic Recommendation Flow ────────────────────────────────────────────────
-- story: recommendation request - direct
-  steps:
-    - intent: recommendation_request
-    - action: action_get_clinic_recommendations
-
 - story: recommendation with service context
   steps:
     - intent: get_clinic_services
@@ -122,7 +76,7 @@ stories:
     - intent: book_appointment
     - action: utter_book_appointment
 
-- story: nearest clinic then recommendation
+- story: nearest clinic then wait time
   steps:
     - intent: nearest_clinic
     - action: action_get_clinic_recommendations
@@ -130,22 +84,12 @@ stories:
     - action: action_get_estimated_wait_time
 
 # ── Appointment Flow ──────────────────────────────────────────────────────────
-- story: appointment inquiry
-  steps:
-    - intent: appointment_inquiry
-    - action: utter_appointment_inquiry
-
-- story: book appointment
-  steps:
-    - intent: book_appointment
-    - action: utter_book_appointment
-
 - story: book appointment with slot check
   steps:
     - intent: book_appointment
-    - action: action_get_available_slots
-    - intent: affirm
     - action: utter_book_appointment
+    - intent: affirm
+    - action: action_get_available_slots
 
 - story: appointment then wait time
   steps:
@@ -153,16 +97,6 @@ stories:
     - action: utter_book_appointment
     - intent: estimated_wait_time
     - action: action_get_estimated_wait_time
-
-- story: cancel appointment
-  steps:
-    - intent: cancel_appointment
-    - action: utter_cancel_appointment
-
-- story: reschedule appointment
-  steps:
-    - intent: reschedule_appointment
-    - action: utter_reschedule_appointment
 
 - story: services then book appointment
   steps:
@@ -215,16 +149,6 @@ stories:
     - action: action_escalate_to_staff
 
 # ── Human Assistance / Escalation Flow ───────────────────────────────────────
-- story: human assistance direct
-  steps:
-    - intent: human_assistance
-    - action: action_escalate_to_staff
-
-- story: complaint then escalate
-  steps:
-    - intent: complaint
-    - action: action_escalate_to_staff
-
 - story: complaint with context
   steps:
     - intent: greet
@@ -242,26 +166,6 @@ stories:
     - action: action_escalate_to_staff
 
 # ── Clinic Information Flows ──────────────────────────────────────────────────
-- story: clinic hours
-  steps:
-    - intent: clinic_hours
-    - action: action_get_clinic_hours
-
-- story: clinic location
-  steps:
-    - intent: get_clinic_location
-    - action: utter_get_clinic_location
-
-- story: nearest clinic
-  steps:
-    - intent: nearest_clinic
-    - action: action_get_clinic_recommendations
-
-- story: clinic services
-  steps:
-    - intent: get_clinic_services
-    - action: action_get_clinic_services
-
 - story: hours then location
   steps:
     - intent: clinic_hours
@@ -275,37 +179,6 @@ stories:
     - action: utter_get_clinic_location
     - intent: join_queue
     - action: action_join_queue
-
-# ── FAQ Flows ────────────────────────────────────────────────────────────────
-- story: philhealth inquiry
-  steps:
-    - intent: ask_philhealth
-    - action: utter_ask_philhealth
-
-- story: hmo inquiry
-  steps:
-    - intent: ask_hmo
-    - action: utter_ask_hmo
-
-- story: payment inquiry
-  steps:
-    - intent: ask_payment
-    - action: utter_ask_payment
-
-- story: results inquiry
-  steps:
-    - intent: ask_results
-    - action: utter_ask_results
-
-- story: requirements inquiry
-  steps:
-    - intent: ask_requirements
-    - action: utter_ask_requirements
-
-- story: health faq
-  steps:
-    - intent: general_health_faq
-    - action: utter_general_health_faq
 
 # ── Failed Input Recovery ─────────────────────────────────────────────────────
 - story: failed input recovery - affirm after fallback

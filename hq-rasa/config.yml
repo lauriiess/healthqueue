@@ -14,25 +14,37 @@ pipeline:
     min_ngram: 1
     max_ngram: 4
 
-  # Entity extraction
+  # Entity extraction / intent classification
   - name: DIETClassifier
     epochs: 150
     constrain_similarities: true
     entity_recognition: true
-    # Higher confidence threshold for better precision
     ranking_length: 5
 
   - name: EntitySynonymMapper
+
+  # Domain vocabulary gate — hard override to out_of_scope when the message
+  # contains none of HealthQueue+'s known domain vocabulary. See
+  # domain_gate.py for the maintained keyword list and rationale.
+  - name: domain_gate.DomainKeywordGate
 
   # Response selection (for FAQ)
   - name: ResponseSelector
     epochs: 100
     constrain_similarities: true
 
-  # Fallback — raised threshold for better handling of ambiguous inputs
+  # Fallback — this is the primary gatekeeper for "is this in-domain at all".
+  # threshold raised from 0.55 -> 0.75: DIET uses a softmax over your closed
+  # set of intents, so an unrelated message ("what's the weather") will still
+  # get force-classified into whichever known intent is vocabulary-closest
+  # (e.g. clinic_hours, because both share words like "what"/"is"/"today").
+  # A low threshold let those medium-confidence guesses through as if they
+  # were real matches. 0.75 means only genuinely confident, unambiguous
+  # matches to a real HealthQueue+ intent are accepted; everything else
+  # (including most unrelated input) falls back.
   - name: FallbackClassifier
-    threshold: 0.55
-    ambiguity_threshold: 0.10
+    threshold: 0.75
+    ambiguity_threshold: 0.15
 
 policies:
   # Exact story memorization
@@ -45,12 +57,11 @@ policies:
     core_fallback_action_name: "action_default_fallback"
     enable_fallback_prediction: true
 
-  # ML-based dialogue policy — longer history for better context
+  # ML-based dialogue policy
   - name: TEDPolicy
     max_history: 8
     epochs: 150
     constrain_similarities: true
-    # Reduce over-fitting in short conversations
     batch_size:
       - 32
       - 64

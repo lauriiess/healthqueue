@@ -23,6 +23,8 @@ nlu:
     - magandang umaga
     - magandang hapon
     - magandang gabi
+    - gud am
+    - gud pm
     - hello hq
     - hi assistant
     - start
@@ -61,6 +63,7 @@ nlu:
     - thanks po
     - salamat po
     - sige bye
+    - cge bye
     - ok noted thanks
     - got it thanks
 
@@ -73,6 +76,8 @@ nlu:
     - of course
     - definitely
     - ok
+    - oki
+    - okie
     - okay
     - sounds good
     - correct
@@ -85,6 +90,7 @@ nlu:
     - yes please
     - oo po
     - sige po
+    - cge po  
     - tama
     - confirmed
 
@@ -100,11 +106,15 @@ nlu:
     - nah
     - not now
     - cancel that
+    - cancel na lang
     - never mind
     - nevermind
     - hindi po
     - wag na
+    - huwag na
     - no need
+    - ayaw
+    - ayoko
 
 - intent: bot_challenge
   examples: |
@@ -125,6 +135,21 @@ nlu:
     - ano pangalan mo
     - sino ka
     - ikaw ba ay AI
+    - tao ka ba talaga
+    - human ka ba
+    - real person ka ba
+    - machine ka ba
+    - AI ka
+    - artificial intelligence ka ba
+    - automated ka ba
+    - sino ang kausap ko
+    - ano ka
+    - bot talaga
+    - robot ka
+    - ikaw ba yung chatbot
+    - may tao bang sumasagot
+    - AI assistant ka ba
+    - legit na bot ka ba
 
 # ── Queue ────────────────────────────────────────────────────────────────────
 - intent: join_queue
@@ -135,9 +160,20 @@ nlu:
     - put me in line
     - get me a queue number
     - I want to line up
+    - can I get a spot
     - pila ako
     - gusto kong pumila
+    - gus2 kong pumila
     - magpapila na ako
+    - magpapalista ako
+    - sasali ako sa pila
+    - pila na ako
+    - pwsde sumali s pila
+    - pwde b sumali s pila
+    - pasali aq s q
+    - gusto q pumila
+    - p2loy aq s queue
+    - pa q nmn
     - kumuha ng queue number
     - I'd like to take a number
     - sign me up for the queue
@@ -153,6 +189,7 @@ nlu:
   examples: |
     - cancel my queue
     - remove me from the queue
+    - remove my name from the queue
     - I want to leave the queue
     - cancel queue number
     - I don't want to be in line anymore
@@ -164,7 +201,14 @@ nlu:
     - I changed my mind
     - ayaw ko na pumila
     - cancel pila ko
-
+    - alis na ako sa pila
+    - hindi na ako tutuloy sa pila
+    - tanggalin yung queue ko
+    - cancel q n lng ung pila
+    - ayw q n pumila
+    - alisin aq s q
+    - wla n aq sa pila    
+    
 - intent: check_queue_status
   examples: |
     - what is my queue status
@@ -186,6 +230,13 @@ nlu:
     - status ng queue ko
     - where am I in line
     - my queue
+    - active pa ba queue ko
+    - nasaan na ako sa pila
+    - pang ilan na ako sa pila
+    - pang ilan n q
+    - nsa anung num na aq
+    - ilan p bago aq
+    - chek q status q    
 
 - intent: estimated_wait_time
   examples: |
@@ -209,6 +260,17 @@ nlu:
     - eta
     - how many minutes
     - waiting time
+    - matagal ba ngayon
+    - mabilis ba ang pila ngayon
+    - mabilis ba ang pila ngayon
+    - kelan kaya ako tatawagin
+    - ilang tao pa bago ako matawag
+    - gaano kahaba ang hintayan
+    - gno p katagal
+    - matagal p b
+    - ilang min p
+    - keln aq tatawagin
+    - my eta b
 
 - intent: get_queue_number
   examples: |
@@ -221,6 +283,18 @@ nlu:
     - kumuha ng number
     - take a number
     - paano kumuha ng number
+    - saan kukuha ng queue number
+    - saan ako kukuha ng number
+    - pwede kumuha ng number
+    - pwd b kumuha ng number
+    - number ko saan
+    - bigyan ako ng queue number
+    - where can I get my queue number
+    - how can I receive my number
+    - san kkuha ng num
+    - pnu kkuha q num
+    - bgyan aq ng q num
+    - q number pnu
 
 # ── Clinic Info ──────────────────────────────────────────────────────────────
 - intent: clinic_hours
@@ -233,6 +307,7 @@ nlu:
     - is the clinic open today
     - is the clinic open on weekends
     - open on saturday
+    - are you open on Sunday
     - clinic schedule
     - hours of operation
     - bukas ba ngayon
@@ -244,6 +319,12 @@ nlu:
     - schedule ng clinic
     - open ba bukas
     - bukas pa ba sila ngayon
+    - anong oras nagsasara
+    - until what time are you open
+    - anung oras bukas
+    - bukas p b ngaun
+    - anung oras sara
+    - keln kau open
 
 - intent: nearest_clinic
   examples: |
@@ -261,6 +342,14 @@ nlu:
     - where to find clinic
     - find clinic
     - clinic saan
+    - anong branch ang pinakamalapit
+    - may clinic bang malapit sa akin
+    - may malapit bang branch
+    - saan may pinakamalapit
+    - san pinakamalapit
+    - my malapit b jan
+    - anung brnch pinakamlapit
+    - clinic n malapit sakin   
 
 - intent: get_clinic_location
   examples: |
@@ -276,6 +365,11 @@ nlu:
     - location
     - map
     - saan kayo
+    - can you send me the clinic location
+    - san ung clinic
+    - paki send loc
+    - san banda yan
+    - anung addr nyo
 
 - intent: get_clinic_services
   examples: |
@@ -295,6 +389,16 @@ nlu:
     - what tests do you do
     - anong available
     - services nyo
+    - anong tests ang available
+    - ano mga laboratory test ninyo
+    - may blood test ba kayo
+    - may laboratory ba kayo
+    - anong procedures ang ginagawa
+    - ano mga medical services ninyo
+    - anu2 meron n test
+    - my cbc b jan
+    - my xray b
+    - anung serv nyo
 
 # ── Appointment ──────────────────────────────────────────────────────────────
 - intent: appointment_inquiry
@@ -312,6 +416,12 @@ nlu:
     - pwede bang walk-in
     - may appointment ba kayo
     - how to make appointment
+    - kailangan ba magpa-schedule
+    - need p b appt
+    - nid b mg book
+    - pwde walk in
+    - kelngn p b mag book
+    - appt req b
 
 - intent: book_appointment
   examples: |
@@ -333,6 +443,10 @@ nlu:
     - i need an appointment
     - can I book today
     - how to book online
+    - pa book aq
+    - magpa sched aq
+    - paki book ng appt
+    - pa resrv ng slot
 
 - intent: cancel_appointment
   examples: |
@@ -347,6 +461,13 @@ nlu:
     - cancel my reservation
     - I-cancel ang appointment ko
     - gusto kong i-cancel ang appointment
+    - paki-cancel nung sched ko
+    - cancel ko na lng ung appointment q
+    - cancel q appointment
+    - cancel q appt
+    - cncel q sched
+    - di n aq mkakapunta
+    - alisin n ung booking q
 
 - intent: reschedule_appointment
   examples: |
@@ -361,6 +482,89 @@ nlu:
     - palitan ang schedule
     - can I reschedule
     - change my booking date
+    - reshedule my appointment
+    - pwede ilipat yung appointment
+    - palipat ng schedule
+    - ibang araw na lang sana
+    - ibang oras sana
+    - gusto ko baguhin yung sched
+    - pa-reschedule po
+    - resched q
+    - p2lip ng sched
+    - ibang oras n lng
+    - ibang araw n lng
+
+- intent: recommendation_request
+  examples: |
+    - can you recommend a clinic
+    - which clinic should I go to
+    - suggest a clinic
+    - recommend the best clinic for me
+    - which branch is best right now
+    - can you suggest a clinic with the shortest queue
+    - what clinic do you recommend
+    - suggest a branch
+    - recommend a branch near me
+    - which clinic has the shortest wait
+    - what's the best clinic to go to right now
+    - ano pong maiirerecommend nyong clinic
+    - alin ang pinakamabilis na clinic
+    - saan pinakamainam pumunta
+    - best clinic ngayon
+    - ano magandang clinic pumuntahan
+    - pwede mo ba akong bigyan ng recommendation
+    - alin dapat pumuntahan ko
+    - ano pinakamagandang branch
+    - anong branch ang irerecommend mo
+    - saan mas mabilis ang pila
+
+# ── Support ──────────────────────────────────────────────────────────────────
+- intent: human_assistance
+  examples: |
+    - can I talk to a human
+    - I need to speak to staff
+    - connect me to a person
+    - talk to a real person
+    - I want to talk to an agent
+    - I need to speak with someone
+    - transfer me to a staff member
+    - is there a live agent
+    - connect me to customer service
+    - I need human help
+    - speak to a representative
+    - can a real person help me
+    - pwede makausap ang staff
+    - gusto kong makipag-usap sa tao
+    - pakonek nga sa staff
+    - pwd makausap tao
+    - need po ng tulong ng staff
+    - can someone assist me directly
+    - pakisabi sa staff na kausapin ako
+    - gusto ko makausap ng tao hindi bot
+
+- intent: complaint
+  examples: |
+    - I want to file a complaint
+    - I have a complaint
+    - this service is bad
+    - I'm not satisfied with the service
+    - I want to report an issue
+    - I have a problem with my appointment
+    - the staff were rude to me
+    - my experience here was bad
+    - I want to complain about the wait time
+    - I want to complain about the staff
+    - report a problem
+    - reklamo ako
+    - may reklamo ako
+    - ang tagal ng pila, gusto ko magreklamo
+    - masamang serbisyo
+    - hindi ako satisfied
+    - nag reklamo ako
+    - gusto ko magsumbong
+    - yung staff ninyo bastos
+    - hindi maganda serbisyo dito
+    - gusto ko mag-report ng issue
 
 # ── Requirements / Preparation ───────────────────────────────────────────────
 - intent: ask_requirements
@@ -384,6 +588,18 @@ nlu:
     - magfa-fast ba ako
     - requirements for CBC
     - what to prepare
+    - ano kailangan dalhin
+    - ano dapat ihanda
+    - may kailangan bang document
+    - kailangan ba ng valid ID
+    - kailangan ba ng doctor request
+    - kailangan ba ng referral
+    - kailangan ba mag-fasting
+    - anu dadalhin q
+    - need b id
+    - nid b id
+    - my reqs b
+    - klngan b mag fasting
 
 - intent: ask_payment
   examples: |
@@ -409,6 +625,18 @@ nlu:
     - gcash ba
     - bayad paano
     - payment options
+    - magkano ang babayaran
+    - magkano ang test
+    - ano payment methods nyo
+    - pwede ba cash
+    - pwede ba card
+    - pwede GCash
+    - tumatanggap ba kayo ng e-wallet
+    - magkno
+    - magkano p
+    - pwde gcash
+    - card pwde b
+    - anung payment nyo
 
 - intent: ask_results
   examples: |
@@ -428,6 +656,16 @@ nlu:
     - result releasing time
     - same day ba ang result
     - how long to get results
+    - kailan available yung result
+    - kailan ko makukuha yung result
+    - gaano katagal processing
+    - pwede online yung results
+    - ready na ba yung result ko
+    - lumabas na ba yung result
+    - keln lalabas reslt
+    - my result n b q
+    - keln makukuha result
+    - gno katagal result
 
 - intent: ask_philhealth
   examples: |
@@ -443,6 +681,15 @@ nlu:
     - may PhilHealth ka ba
     - covered ng philhealth
     - philhealth ba ito
+    - covered ba ng PhilHealth
+    - tumatanggap ba kayo ng PhilHealth
+    - may PhilHealth coverage ba
+    - PhilHealth accepted ba
+    - accredited ba kayo ng PhilHealth
+    - pwde philhealth
+    - philhealth accpt b
+    - covered b philhealth
+    - my philhealth b
 
 - intent: ask_hmo
   examples: |
@@ -460,6 +707,16 @@ nlu:
     - Medicard
     - pwede ang HMO
     - HMO ba pwede
+    - pwede gamitin yung HMO ko
+    - covered ba ng HMO
+    - anong HMO ang accepted
+    - tumatanggap ba kayo ng insurance
+    - HMO card pwede ba
+    - pwede company HMO
+    - pwde hmo
+    - hmo accpt b
+    - my hmo aq
+    - coverd b ng hmo
 
 # ── General Health FAQ ───────────────────────────────────────────────────────
 - intent: general_health_faq
@@ -478,8 +735,34 @@ nlu:
     - what is cholesterol test
     - what is fasting blood sugar
     - FBS test
+    - para saan ang CBC
+    - ano ang CBC
+    - ano chine-check sa CBC
+    - para saan ang urinalysis
+    - ano ang urinalysis
+    - ano chine-check sa urinalysis
+    - para saan ang ECG
+    - ano ang ECG
+    - para saan ang 2D echo
+    - ano ang 2D echo
+    - para saan ang ultrasound
+    - ano ang creatinine
+    - para saan ang creatinine test
+    - ano ang uric acid test
+    - para saan ang cholesterol test
+    - ano ang FBS
+    - para saan ang FBS
+    - anu b cbc
+    - para san ang cbc
+    - anu chinecheck s ua
+    - pnu ung ecg
+    - anu ung fbs
 
 # ── Out of scope ─────────────────────────────────────────────────────────────
+# Kept intentionally small — this is a representative sample, not an
+# exhaustive catalogue of "everything the bot shouldn't answer". The
+# FallbackClassifier threshold (config.yml) is what does the heavy lifting
+# for topics not seen here at all.
 - intent: out_of_scope
   examples: |
     - what is the weather
@@ -491,3 +774,44 @@ nlu:
     - what movie should I watch
     - random question
     - unrelated topic
+    - will it rain tomorrow
+    - recommend a movie
+    - make me laugh
+    - who won the game
+    - what's the latest news
+    - help me with my homework
+    - write an essay for me
+    - what is the capital of Japan
+    - give me a recipe
+    - how do I cook adobo
+    - play a song
+    - sing me a song
+    - what's the price of bitcoin
+    - can you translate this
+    - what should I wear today
+    - ano ulam
+    - anong magandang movie
+    - joke naman
+    - anong weather ngayon
+    - sino nanalo sa game
+    - is there a typhoon coming
+    - what time is sunset
+    - what time is it
+    - set an alarm for me
+    - remind me at 8pm
+    - give me a countdown
+    - what should I cook today
+    - how do I cook sinigang
+    - how do I make adobo
+    - order food for me
+    - where can I buy pizza
+    - what restaurant is open
+    - how much is a burger
+    - recommend a coffee shop
+    - what happened in the news
+    - what is trending today
+    - tell me about politics
+    - what's bitcoin worth
+    - how do I invest
+    - help me with my math
+    - solve this equation
